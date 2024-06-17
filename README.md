@@ -176,17 +176,19 @@ Bellek sızıntısı, programın bellek kullanımını kontrol etme yeteneğini 
 ### **FD (FİLE DESCRİPTOR)**
 fd,  dosya tanımlayıcısı (file descriptor) işletim sistemlerinde dosyaları, soketleri ve diğer giriş/çıkış kaynaklarını temsil etmek için kullanılır. fd değerleri, açık dosyaları veya soket bağlantılarını belirtir ve bu değerler üzerinden giriş/çıkış işlemleri gerçekleştirilir. open, read, write, close gibi sistem çağrıları, fd değerleri üzerinde çalışır. Standart giriş/çıkış tanımlayıcıları da fd’lerdir.
 
-|-------------|----------------------|-------------------------------------|
-| 0 (stdin) | standart giriş | (kullanıcıdan veri okumak için) |
-| 1 (stdout) | standart çıkış | (veriyi ekrana yazdırmak için) |
-| 2 (stderr) | standart hata | (hata msjlarını ekrana yazdırmak için) |
+| İşlem                                      | Açıklama                                           |
+|--------------------------------------------|----------------------------------------------------|
+| 0 (stdin)                                  | standart giriş (kullanıcıdan veri okumak için)     |
+| 1 (stdout)                                 | standart çıkış (veriyi ekrana yazdırmak için)      |
+| 2 (stderr)                                 | standart hata (hata mesajlarını ekrana yazdırmak için) |
 
 3 ve sonraki sayılar açık olan diğer dosyalar için atanır. Open – fopen eğer işlem başarısız olursa -1 değerini döndürür.
 
-|-----------------------------------------|-----------------------------------------------------|
-| Dosya açma ve dosya tanımlayıcısı alma    |    int fd = open("dosya.txt", O_RDONLY); |
-| Dosyadan okuma  |  char buffer[100];  read(fd, buffer, sizeof(buffer)); |
-| Dosyayı kapatma  |  close(fd); |
+| İşlem                                      | Açıklama                                           |
+|--------------------------------------------|----------------------------------------------------|
+| Dosya açma ve dosya tanımlayıcısı alma     | `int fd = open("dosya.txt", O_RDONLY);`            |
+| Dosyadan okuma                             | `char buffer[100]; read(fd, buffer, sizeof(buffer));` |
+| Dosyayı kapatma                            | `close(fd);`                                       |
 
 **FLAGS:**
 	Dosya tanımlayıcıların belirli davranışlarını kontrol etmek ve yapılandırmak için kullanılır.
@@ -374,7 +376,7 @@ Bu örnekte, typedef ile struct içerisindeki bir yapıyı yap adı altında bir
 
 **memcmp:** İki bellek bloğunu karşılaştırır farklı bir karakter bulduğunda farklarını döndürür.
 
-**Strlen:** Bir dizinin uzunluğunu bulur.
+**strlen:** Bir dizinin uzunluğunu bulur.
 
 **strdup:** Verilen bir dizinin bir kopyasını bellekte açtığı yere kopyalar ve bu bellek adresini döndürür.
 
