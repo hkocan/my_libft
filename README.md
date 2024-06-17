@@ -176,16 +176,14 @@ Bellek sızıntısı, programın bellek kullanımını kontrol etme yeteneğini 
 ### **FD (FİLE DESCRİPTOR)**
 fd,  dosya tanımlayıcısı (file descriptor) işletim sistemlerinde dosyaları, soketleri ve diğer giriş/çıkış kaynaklarını temsil etmek için kullanılır. fd değerleri, açık dosyaları veya soket bağlantılarını belirtir ve bu değerler üzerinden giriş/çıkış işlemleri gerçekleştirilir. open, read, write, close gibi sistem çağrıları, fd değerleri üzerinde çalışır. Standart giriş/çıkış tanımlayıcıları da fd’lerdir.
 
-| İşlem                                      | Açıklama                                           |
-|--------------------------------------------|----------------------------------------------------|
+
 | 0 (stdin)                                  | standart giriş (kullanıcıdan veri okumak için)     |
 | 1 (stdout)                                 | standart çıkış (veriyi ekrana yazdırmak için)      |
 | 2 (stderr)                                 | standart hata (hata mesajlarını ekrana yazdırmak için) |
 
 3 ve sonraki sayılar açık olan diğer dosyalar için atanır. Open – fopen eğer işlem başarısız olursa -1 değerini döndürür.
 
-| İşlem                                      | Açıklama                                           |
-|--------------------------------------------|----------------------------------------------------|
+
 | Dosya açma ve dosya tanımlayıcısı alma     | `int fd = open("dosya.txt", O_RDONLY);`            |
 | Dosyadan okuma                             | `char buffer[100]; read(fd, buffer, sizeof(buffer));` |
 | Dosyayı kapatma                            | `close(fd);`                                       |
